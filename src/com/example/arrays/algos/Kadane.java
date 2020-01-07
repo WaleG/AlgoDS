@@ -1,4 +1,4 @@
-package com.example.arrays;
+package com.example.arrays.algos;
 
 public class Kadane {
 

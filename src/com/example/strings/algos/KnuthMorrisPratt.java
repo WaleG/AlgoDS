@@ -1,4 +1,4 @@
-package com.example.strings;
+package com.example.strings.algos;
 
 import java.util.ArrayList;
 import java.util.List;
