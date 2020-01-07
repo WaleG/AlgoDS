@@ -1,7 +1,6 @@
 package com.example.strings;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class KnuthMorrisPratt {
