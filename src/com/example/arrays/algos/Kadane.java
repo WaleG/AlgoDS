@@ -4,8 +4,7 @@ public class Kadane {
 
     public static void main(String... args) {
         int[] a = {-2, -3, 4, -1, -2, 1, 5, -3};
-        System.out.println("Maximum continuous sum is " +
-                maxSubArraySum(a));
+        System.out.println("Maximum continuous sum is " + maxSubArraySum(a));
     }
 
     public static int maxSubArraySum(int[] array) {

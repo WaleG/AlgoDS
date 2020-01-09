@@ -1,13 +1,12 @@
 package com.example.strings;
 
 public class LongestPalindrome {
-
     //  Expand around center
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) return "";
         String longest = "";
-        String cand1 = null;
-        String cand2 = null;
+        String cand1;
+        String cand2;
         for (int i = 0; i < s.length(); i++) {
             cand1 = lp(s, i, i);
             cand2 = lp(s, i, i + 1);
