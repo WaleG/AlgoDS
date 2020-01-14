@@ -1,6 +1,6 @@
 package com.example.strings;
 
-public class LongestPalindrome {
+public class LongestPalindromicSubstring {
     //  Expand around center
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) return "";

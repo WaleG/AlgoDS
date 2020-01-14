@@ -11,7 +11,7 @@ public class GroupAnagrams {
     }
 
     public static List<List<String>> groupAnagrams(String[] strs) {
-        Map<Integer, List<String>> map = new HashMap<>();
+        Map<String, List<String>> map = new HashMap<>();
         int i;
         int[] arr;
         for (String str: strs) {
@@ -20,10 +20,10 @@ public class GroupAnagrams {
                 i = c - 'a';
                 arr[i]++;
             }
-            int hashcode = Arrays.hashCode(arr);
-            List<String> value = map.getOrDefault(hashcode, new ArrayList<>());
+            String key = Arrays.toString(arr);
+            List<String> value = map.getOrDefault(key, new ArrayList<>());
             value.add(str);
-            map.put(hashcode, value);
+            map.put(key, value);
         }
         return new ArrayList<>(map.values());
     }

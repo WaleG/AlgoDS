@@ -6,27 +6,10 @@ public class MinimumWindowSubstring {
         System.out.println(result);
     }
 
-    /*
-    "ADOBECODEBANC"
-      ^          ^
-    "ABC"D
-    [000]1
-    c = 0
-    l = 1
-    r = 12
-
-    minl = 10000
-    mins = 1
-
-    r - l = 6
-
-    mins = 0
-    minl = 6
-     */
     public String minWindow(String s, String pattern) {
         int[] mapP = new int[128];
         for (char c : pattern.toCharArray()) {
-            mapP[c - '0']++;
+            mapP[c]++;
         }
 
         int counter = pattern.length();
@@ -34,7 +17,7 @@ public class MinimumWindowSubstring {
 
         int i;
         while (right < s.length()) {
-            i = s.charAt(right) - '0';
+            i = s.charAt(right);
             if (mapP[i] > 0) {
                 counter--;
             }
@@ -45,7 +28,7 @@ public class MinimumWindowSubstring {
                     minStart = left;
                     minLen = right - left;
                 }
-                i = s.charAt(left) - '0';
+                i = s.charAt(left);
                 mapP[i]++;
                 if (mapP[i] > 0) {
                     counter++;
@@ -55,9 +38,4 @@ public class MinimumWindowSubstring {
         }
         return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
     }
-
-    /*
-    Input: S = "ADOBECODEBANC", T = "ABC"
-    Output: "BANC"
-     */
 }
