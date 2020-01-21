@@ -1,7 +1,6 @@
 package com.example.strings;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class GroupAnagrams {
 
@@ -14,9 +13,9 @@ public class GroupAnagrams {
         Map<String, List<String>> map = new HashMap<>();
         int i;
         int[] arr;
-        for (String str: strs) {
+        for (String str : strs) {
             arr = new int[26];
-            for (char c: str.toCharArray()) {
+            for (char c : str.toCharArray()) {
                 i = c - 'a';
                 arr[i]++;
             }
