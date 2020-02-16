@@ -1,6 +1,7 @@
 package com.example.arrays;
 
-import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class MeetingRoomsI {
     /*
@@ -12,29 +13,24 @@ public class MeetingRoomsI {
          ^    ^
                     ^     ^
      */
-    public boolean canAttendMeetings(Interval[] intervals) {
-        if (intervals.length == 0) return true;
-        Arrays.sort(intervals);
-        int end = intervals[0].to;
+    public boolean canAttendMeetings(List<Interval> intervals) {
+        if (intervals.size() == 0) return true;
+        intervals.sort(Comparator.comparingInt((Interval i) -> i.start));
+        int end = intervals.get(0).end;
         for (Interval i : intervals) {
-            if (end > i.from) return false;
-            end = i.to;
+            if (end > i.start) return false;
+            end = i.end;
         }
         return true;
     }
 
-    private static class Interval implements Comparable<Interval> {
-        int from;
-        int to;
+    private static class Interval {
+        int start;
+        int end;
 
-        public Interval(int from, int to) {
-            this.from = from;
-            this.to = to;
-        }
-
-        @Override
-        public int compareTo(Interval o) {
-            return Integer.compare(this.from, o.from);
+        public Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
         }
     }
 }
