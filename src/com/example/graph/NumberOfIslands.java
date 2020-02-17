@@ -1,7 +1,5 @@
 package com.example.graph;
 
-import java.util.List;
-
 public class NumberOfIslands {
     public int numIslands(char[][] grid) {
         int count = 0;
