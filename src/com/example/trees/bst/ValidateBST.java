@@ -1,6 +1,6 @@
-package com.example.trees;
+package com.example.trees.bst;
 
-public class ValidateBinarySearchTree {
+public class ValidateBST {
     public boolean isValidBST(TreeNode root) {
         return isValid(root, null, null);
     }
