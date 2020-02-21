@@ -44,8 +44,8 @@ public class MeetingRoomsII {
         }
 
         @Override
-        public int compareTo(Interval o) {
-            return Integer.compare(this.from, o.from);
+        public int compareTo(Interval that) {
+            return Integer.compare(this.from, that.from);
         }
     }
 }
