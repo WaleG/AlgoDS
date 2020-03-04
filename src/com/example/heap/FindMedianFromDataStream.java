@@ -18,14 +18,14 @@ public class FindMedianFromDataStream {
 
     public void addNum(int num) {
         lower.offer(num);
-        upper.offer(lower.poll());
+        upper.offer(lower.remove());
         if (upper.size() > lower.size()) {
             lower.offer(upper.poll());
         }
     }
 
     public double findMedian() {
-        if(upper.size() == lower.size()) return (upper.peek() + lower.peek()) / 2.0;
+        if(upper.size() == lower.size()) return (upper.element() + lower.element()) / 2.0;
         return lower.size();
     }
 }

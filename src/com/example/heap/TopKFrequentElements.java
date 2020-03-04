@@ -1,6 +1,7 @@
 package com.example.heap;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TopKFrequentElements {
     public List<Integer> topKFrequent(int[] nums, int k) {
@@ -17,10 +18,8 @@ public class TopKFrequentElements {
             if (pq.size() > k) pq.poll();
         }
 
-        Integer[] result = new Integer[pq.size()];
-        for (int i = pq.size() - 1; i >= 0; i--) {
-            result[i] = pq.poll();
-        }
-        return Arrays.asList(result);
+        List<Integer> result = new ArrayList<>(pq.size());
+        result.addAll(pq);
+        return result;
     }
 }
