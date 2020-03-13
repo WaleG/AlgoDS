@@ -39,8 +39,7 @@ where the largest sum among the two subarrays is only 18.
         for(int i = 1; i < nums.length; i++){
             sum[i] = sum[i - 1] + nums[i];
         }
-        int i =  helper(nums, nums.length - 1, m, sum, memo);
-        return i;
+        return helper(nums, nums.length - 1, m, sum, memo);
     }
 
     private int helper(int[] nums, int start, int m, int[] sums, int[][] memo) {
