@@ -3,12 +3,10 @@ package com.example.ignore.amazon;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-import static java.util.Comparator.comparingInt;
-
 public class MergeKSortedLists {
     public ListNode mergeKLists(ListNode[] lists) {
-        PriorityQueue<ListNode> q = new PriorityQueue<>(comparingInt(node -> node.val));
-        for (ListNode listNode: lists) {
+        PriorityQueue<ListNode> q = new PriorityQueue<>(Comparator.comparingInt(node -> node.val));
+        for (ListNode listNode : lists) {
             if (listNode != null) {
                 q.add(listNode);
             }
