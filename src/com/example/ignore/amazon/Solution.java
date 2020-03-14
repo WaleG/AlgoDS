@@ -1,12 +1,9 @@
 package com.example.ignore.amazon;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class Solution {
-    int islands(int rows, int column, List<List<Integer> > grid)
-    {
+    int islands(int rows, int column, List<List<Integer>> grid) {
         int count = 0;
         for (int i = 0; i < grid.size(); i++) {
             for (int j = 0; j < grid.get(0).size(); j++) {
