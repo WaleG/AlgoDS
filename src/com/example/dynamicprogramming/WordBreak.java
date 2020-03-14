@@ -9,7 +9,7 @@ public class WordBreak {
     public boolean wordBreak(String s, List<String> wordDict) {
         // DFS
         Set<String> dict = new HashSet<>(wordDict);
-        Set<Integer> path = new HashSet<Integer>();
+        Set<Integer> path = new HashSet<>();
         return dfs(s, 0, dict, path);
     }
 
