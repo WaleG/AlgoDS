@@ -1,11 +1,10 @@
 package com.example.arrays;
 
-import java.util.ArrayDeque;
 import java.util.Stack;
 
 public class LargestRectangleInHistogram {
     public static void main(String[] args) {
-        int[] heights = {2,1,5,6,2,3};
+        int[] heights = {2, 1, 5, 6, 2, 3};
         int maxArea = new LargestRectangleInHistogram().largestRectangleArea(heights);
         System.out.println(maxArea);
     }
