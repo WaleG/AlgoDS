@@ -1,8 +1,5 @@
 package com.example.ignore.amazon;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class DiameterOfABinaryTree {
     public int diameterOfBinaryTree(TreeNode root) {
         int[] maxHolder = {0};
