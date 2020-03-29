@@ -56,12 +56,8 @@ public class WordLadder2 {
                 String s1 = wordList.get(i);
                 String s2 = wordList.get(j);
                 if (isTransformation(s1, s2)) {
-                    Set<String> n1 = g.getOrDefault(s1, new HashSet<>());
-                    Set<String> n2 = g.getOrDefault(s2, new HashSet<>());
-                    n1.add(s2);
-                    n2.add(s1);
-                    g.put(s1, n1);
-                    g.put(s2, n2);
+                    g.computeIfAbsent(s1, k -> new HashSet<>()).add(s2);
+                    g.computeIfAbsent(s2, k -> new HashSet<>()).add(s1);
                 }
             }
         }

@@ -55,20 +55,20 @@ public class LFUCache {
     public void put(int key, int value) {
         if (capacity <= 0) return;
 
-        if (items.containsKey(key)) {
+        if (!items.containsKey(key)) {
+            if (items.size() == capacity) {
+                removeLFU();
+            }
+
+            items.put(key, value);
+            frequencies.put(key, 1);
+            least = 1;
+            freqToItemMap.get(1).add(key);
+        } else {
             items.put(key, value);
             get(key);
-            return;
         }
 
-        if (items.size() == capacity) {
-            removeLFU();
-        }
-
-        items.put(key, value);
-        frequencies.put(key, 1);
-        least = 1;
-        freqToItemMap.get(1).add(key);
     }
 
     private void removeLFU() {

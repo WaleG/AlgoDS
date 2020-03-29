@@ -10,7 +10,7 @@ public class WordBreak {
         canBeSegmented[0] = true;
         Set<String> dict = new HashSet<>(wordDict);
 
-        for (int i = 1; i < s.length(); i++) {
+        for (int i = 1; i <= s.length(); i++) {
             for (int j = 0; j < i; j++) {
                 String word = s.substring(j, i);
                 if (canBeSegmented[j] && dict.contains(word)) {
