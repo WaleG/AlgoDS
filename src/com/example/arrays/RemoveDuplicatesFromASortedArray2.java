@@ -1,9 +1,9 @@
 package com.example.arrays;
 
-public class RemoveDuplicatesFromASortedArray {
+public class RemoveDuplicatesFromASortedArray2 {
     public static void main(String[] args) {
         int[] nums = {0,0,1,1,1,1,2,3,3};
-        int r = new RemoveDuplicatesFromASortedArray().removeDuplicates(nums);
+        int r = new RemoveDuplicatesFromASortedArray2().removeDuplicates(nums);
         System.out.println(r);
     }
 
