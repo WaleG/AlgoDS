@@ -2,14 +2,14 @@ package com.example.arrays;
 
 public class RemoveDuplicatesFromASortedArray2 {
     public static void main(String[] args) {
-        int[] nums = {0,0,1,1,1,1,2,3,3};
+        int[] nums = {0, 0, 1, 1, 1, 1, 2, 3, 3};
         int r = new RemoveDuplicatesFromASortedArray2().removeDuplicates(nums);
         System.out.println(r);
     }
 
     public int removeDuplicates(int[] nums) {
         int insert = 0;
-        for (int num: nums) {
+        for (int num : nums) {
             if (insert < 2 || num > nums[insert - 2]) {
                 nums[insert++] = num;
             }
